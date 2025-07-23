@@ -218,7 +218,7 @@ permalink: /backstage/
               <span class="text-4xl mb-4 block">🎉</span>
               <h4 class="text-[var(--neutral-900)] mb-2">You're on the list!</h4>
               <p class="text-[var(--neutral-700)]">
-                We'll reach out soon with more information.
+                Check your email to confirm. We'll reach out soon with more information.
               </p>
             </div>
           </div>
@@ -352,9 +352,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const buttondownData = new FormData();
       buttondownData.append('email', email);
       buttondownData.append('metadata', JSON.stringify({ company: company, type: 'publisher' }));
+      buttondownData.append('tag', 'publisher');
+      buttondownData.append('embed', '1');
       
       try {
-        const response = await fetch('https://buttondown.email/api/emails/embed-subscribe/gamenightgpt', {
+        const response = await fetch('https://buttondown.com/api/emails/embed-subscribe/gamenightgpt', {
           method: 'POST',
           body: buttondownData,
         });

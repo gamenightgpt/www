@@ -14,7 +14,7 @@ module.exports = function(eleventyConfig) {
     },
     metadata: {
       language: "en",
-      title: "GameNightGPT Blog",
+      title: "Blog",
       subtitle: "Get Answers Fast — Keep Gaming",
       base: "https://gamenightgpt.com/",
       author: {

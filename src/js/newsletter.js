@@ -18,9 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const email = emailInput.value;
       const formData = new FormData();
       formData.append('email', email);
+      formData.append('embed', '1');
       
       try {
-        const response = await fetch('https://buttondown.email/api/emails/embed-subscribe/gamenightgpt', {
+        const response = await fetch('https://buttondown.com/api/emails/embed-subscribe/gamenightgpt', {
           method: 'POST',
           body: formData,
         });
