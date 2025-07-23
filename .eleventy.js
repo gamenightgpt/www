@@ -36,7 +36,12 @@ module.exports = function(eleventyConfig) {
 
   // Date formatting filter
   eleventyConfig.addFilter("dateToRfc3339", pluginRss.dateToRfc3339);
-  eleventyConfig.addFilter("dateToRfc822", pluginRss.dateToRfc822);
+  eleventyConfig.addFilter("dateToRfc822", (dateObj) => {
+    // Ensure valid date object
+    const date = new Date(dateObj);
+    // Use toUTCString() and replace UTC with GMT for RFC822 compatibility
+    return date.toUTCString().replace('UTC', 'GMT');
+  });
   eleventyConfig.addFilter("dateDisplay", (dateObj) => {
     return dateObj.toLocaleDateString('en-US', {
       year: 'numeric',
