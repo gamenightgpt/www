@@ -35,6 +35,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon-16x16.ico": "favicon-16x16.ico" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon-48x48.ico": "favicon-48x48.ico" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon-32x32.png": "favicon-32x32.png" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon-64x64.png": "favicon-64x64.png" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
   eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
 
