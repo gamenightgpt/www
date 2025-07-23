@@ -1,6 +1,6 @@
 ---
 title: Welcome to GameNightGPT
-date: 2025-01-22
+date: 2025-01-22T00:00:00Z
 description: Introducing GameNightGPT - your AI-powered board game assistant that keeps the fun rolling.
 layout: layouts/post.njk
 ---

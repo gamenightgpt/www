@@ -36,11 +36,11 @@ module.exports = function(eleventyConfig) {
 
   // Date formatting filter
   eleventyConfig.addFilter("dateToRfc3339", pluginRss.dateToRfc3339);
-  eleventyConfig.addFilter("dateToRfc822", (dateObj) => {
-    // Ensure valid date object
+  eleventyConfig.addFilter("dateToRfc822", pluginRss.dateToRfc822);
+  eleventyConfig.addFilter("dateToGMT", (dateObj) => {
+    // Force UTC/GMT for RSS feeds
     const date = new Date(dateObj);
-    // Use toUTCString() and replace UTC with GMT for RFC822 compatibility
-    return date.toUTCString().replace('UTC', 'GMT');
+    return date.toUTCString();
   });
   eleventyConfig.addFilter("dateDisplay", (dateObj) => {
     return dateObj.toLocaleDateString('en-US', {

@@ -25,7 +25,7 @@ metadata:
       <link>{{ absolutePostUrl }}</link>
       <description><![CDATA[{{ post.data.description or post.templateContent | striptags | truncate(160) }}]]></description>
       <content:encoded><![CDATA[{{ post.templateContent | safe }}]]></content:encoded>
-      <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+      <pubDate>{{ post.date | dateToGMT }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
       <guid>{{ absolutePostUrl }}</guid>
     </item>
