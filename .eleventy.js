@@ -1,28 +1,8 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
-  // Add RSS plugin
+  // Add RSS plugin for filters only
   eleventyConfig.addPlugin(pluginRss);
-
-  // RSS feed configuration
-  eleventyConfig.addPlugin(pluginRss.feedPlugin, {
-    type: "rss",
-    outputPath: "/rss.xml",
-    collection: {
-      name: "posts",
-      limit: 0
-    },
-    metadata: {
-      language: "en",
-      title: "Blog",
-      subtitle: "Get Answers Fast — Keep Gaming",
-      base: "https://gamenightgpt.com/",
-      author: {
-        name: "GameNightGPT",
-        email: "dallan@gamenightgpt.com"
-      }
-    }
-  });
 
   // Blog post collection
   eleventyConfig.addCollection("posts", function(collectionApi) {
@@ -56,6 +36,7 @@ module.exports = function(eleventyConfig) {
 
   // Date formatting filter
   eleventyConfig.addFilter("dateToRfc3339", pluginRss.dateToRfc3339);
+  eleventyConfig.addFilter("dateToRfc822", pluginRss.dateToRfc822);
   eleventyConfig.addFilter("dateDisplay", (dateObj) => {
     return dateObj.toLocaleDateString('en-US', {
       year: 'numeric',
