@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or "GameNightGPT - Get Answers Fast — Keep Gaming" }}</title>
+  <meta name="description" content="{{ description or 'Get instant, accurate answers to your rules questions. Your AI-powered board game assistant keeps the fun rolling.' }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Lexend+Deca:wght@400&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="/rss.xml">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ title or 'GameNightGPT - Get Answers Fast — Keep Gaming' }}">
+  <meta property="og:description" content="{{ description or 'Get instant, accurate answers to your rules questions. Your AI-powered board game assistant keeps the fun rolling.' }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gamenightgpt.com{{ page.url }}">
+</head>
+<body>
+  <a href="#main" class="skip-to-content">Skip to main content</a>
+  
+  {{ content | safe }}
+  
+  <!-- Newsletter JavaScript -->
+  <script src="/js/newsletter.js" defer></script>
+  
+  <!-- Plausible Analytics -->
+  <script defer data-domain="gamenightgpt.com" src="https://plausible.io/js/script.js"></script>
+</body>
+</html>

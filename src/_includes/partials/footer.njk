@@ -1,0 +1,87 @@
+<footer class="bg-[var(--neutral-900)] text-white pt-16 pb-8">
+  <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+    <div class="grid md:grid-cols-3 gap-12 mb-12">
+      <!-- Conditional Players/Publishers -->
+      <div>
+        {% if page.url == '/backstage/' %}
+        <h4 class="text-white mb-4">
+          <span class="text-[var(--accent-500)]">For Players</span>
+        </h4>
+        <p class="text-[var(--neutral-300)] text-sm mb-4">
+          Get Answers Fast - Keep Gaming
+        </p>
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-1 text-[var(--accent-500)] hover:text-[var(--accent-600)] font-medium transition-colors"
+        >
+          Learn more
+          <span class="text-sm">→</span>
+        </a>
+        {% else %}
+        <h4 class="text-white mb-4">
+          <span class="text-[var(--accent-500)]">For Publishers</span>
+        </h4>
+        <p class="text-[var(--neutral-300)] text-sm mb-4">
+          Make your game rules instantly accessible to players
+        </p>
+        <a 
+          href="/backstage/" 
+          class="inline-flex items-center gap-1 text-[var(--accent-500)] hover:text-[var(--accent-600)] font-medium transition-colors"
+        >
+          Learn more
+          <span class="text-sm">→</span>
+        </a>
+        {% endif %}
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li>
+            <a href="/" class="text-[var(--neutral-300)] hover:text-white transition-colors">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/blog/" class="text-[var(--neutral-300)] hover:text-white transition-colors">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="/backstage/" class="text-[var(--neutral-300)] hover:text-white transition-colors">
+              Publishers
+            </a>
+          </li>
+          <li>
+            <a href="/rss.xml" class="text-[var(--neutral-300)] hover:text-white transition-colors">
+              RSS Feed
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Legal -->
+      <div>
+        <h4 class="text-white mb-4">Legal</h4>
+        <ul class="space-y-2">
+          <li>
+            <a href="/privacy/" class="text-[var(--neutral-300)] hover:text-white transition-colors">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="/terms/" class="text-[var(--neutral-300)] hover:text-white transition-colors">
+              Terms of Service
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Bottom bar -->
+    <div class="border-t border-[var(--neutral-700)] pt-8 text-center text-[var(--neutral-500)]">
+      <p>&copy; 2025 GameNightGPT. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
