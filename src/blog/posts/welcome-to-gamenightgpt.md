@@ -1,30 +1,30 @@
 ---
-title: Welcome to GameNightGPT
-date: 2025-01-22T00:00:00Z
+title: Welcome to GameNightGPT!
+date: 2025-07-29T00:00:00Z
 description: Introducing GameNightGPT - your AI-powered board game assistant that keeps the fun rolling.
 layout: layouts/post.njk
 ---
 
-We're thrilled to announce the launch of GameNightGPT, a revolutionary AI assistant designed to answer all your board game rules questions instantly.
+Hey there, everyone! 🎲 We're super excited to introduce you to GameNightGPT. Your new go-to for sorting out tricky board game rules.
 
 ## Why We Built GameNightGPT
 
-Every board gamer knows the frustration: you're deep into an exciting game when suddenly a rules question comes up. The momentum stops. Someone grabs the rulebook. Minutes pass as you flip through pages, debate interpretations, and search forums for clarifications.
+You know that moment when you're crushing it, totally in the zone, and then BAM – someone asks a rules question that stops everything cold? Suddenly you're all digging through the rulebook, arguing about what "adjacent" really means, and someone's inevitably pulling up a forum on their phone.
 
-We built GameNightGPT to solve this problem once and for all.
+Yeah, we've all been there. Honestly, it's a buzzkill.
+
+So, we made GameNightGPT to save your game nights from those momentum-killing rules rabbit holes.
 
 ## How It Works
 
-Simply ask your rules question in natural language, just like you would ask a friend:
+Pick your game from our library of 100+ titles, then just ask your question like you're talking to a friend:
 
-- "Can I build a settlement next to another player's city in Catan?"
-- "What happens when I land on Free Parking in Monopoly?"
-- "How does monster focus work in Gloomhaven?"
+- Wait, can I actually build next to their city?
+- Okay but what REALLY happens on Free Parking?
+- Do these energy tokens have to match the card color or what?
 
-GameNightGPT instantly provides accurate answers based on official rulebooks, FAQs, and publisher clarifications. Every answer includes source citations so you can verify the information.
+You'll get a straight answer instantly, pulled from official rules, FAQs, and all those publisher clarifications. We always show you exactly where we got the info, so you know it’s right. 😉
 
 ## Join the Waitlist
 
-We're currently in limited beta, accepting 50 new users every Monday. Join our waitlist to be among the first to experience game nights without rules interruptions.
-
-Stay tuned for more updates, tips, and insights about board gaming!
+Ready Player One! GameNightGPT is gearing up for launch. We want you to be a part of it. Sign up now to be among the first invited to our beta and enjoy uninterrupted gaming.
