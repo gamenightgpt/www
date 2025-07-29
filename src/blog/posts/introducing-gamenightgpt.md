@@ -17,11 +17,11 @@ So, we made GameNightGPT to save your game nights from those momentum-killing ru
 
 ## How It Works
 
-Pick your game from our library of 100+ titles, then just ask your question like you're talking to a friend:
+Pick your game from our library of 200+ titles, then just ask your question like you're talking to a friend:
 
-- Wait, can I actually build next to their city?
-- Okay but what REALLY happens on Free Parking?
-- Do these energy tokens have to match the card color or what?
+- Can I actually build next to their city?
+- Can I temporarily exceed the hand limit?
+- Do these energy tokens have to match the card color?
 
 You'll get a straight answer instantly, pulled from official rules, FAQs, and all those publisher clarifications. We always show you exactly where we got the info, so you know it’s right. 😉
 
