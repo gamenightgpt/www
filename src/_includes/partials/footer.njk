@@ -1,10 +1,10 @@
-<footer class="pt-8 pb-10 bg-dark-coffee text-on-dark">
+<footer class="pb-10 bg-dark-coffee text-on-dark border-t border-[rgba(255,255,255,0.1)]">
   <div class="container mx-auto">
-    <div class="border-t border-dark pt-8">
+    <div class="pt-8">
       <div class="grid md:grid-cols-3 gap-8 text-sm">
         <!-- Conditional Players/Publishers -->
         <div>
-          {% if page.url == '/backstage/' %}
+          {% if page.url == '/publishers/' %}
           <h4 class="mb-4 font-bold text-lg text-accent-gold">
             For Players
           </h4>
@@ -26,7 +26,7 @@
             Make your game rules instantly accessible to players
           </p>
           <a
-            href="/backstage/"
+            href="/publishers/"
             class="inline-flex items-center gap-1 px-4 py-2 rounded-md font-medium text-sm transition-all btn-outline-gold"
           >
             Learn more
@@ -40,8 +40,8 @@
           <h4 class="mb-4 font-bold text-lg text-accent-gold">Quick Links</h4>
           <ul class="space-y-2">
             <li>
-              <a href="/" class="transition-colors opacity-90 hover:opacity-100 hover:text-white">
-                Home
+              <a href="/about/" class="transition-colors opacity-90 hover:opacity-100 hover:text-white">
+                About
               </a>
             </li>
             <li>
@@ -50,7 +50,7 @@
               </a>
             </li>
             <li>
-              <a href="/backstage/" class="transition-colors opacity-90 hover:opacity-100 hover:text-white">
+              <a href="/publishers/" class="transition-colors opacity-90 hover:opacity-100 hover:text-white">
                 Publishers
               </a>
             </li>
