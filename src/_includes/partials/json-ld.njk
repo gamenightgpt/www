@@ -1,0 +1,108 @@
+{# Organization Schema - All pages (E-E-A-T signals for AI) #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GameNightGPT",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/images/logo.png",
+  "description": "GameNightGPT is an AI chatbot and board game rules assistant that provides instant, citation-backed answers to your rules questions.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "{{ site.author.email }}",
+    "contactType": "customer service"
+  }
+}
+</script>
+
+{# WebSite Schema with SearchAction - Homepage only #}
+{%- if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "GameNightGPT",
+  "url": "{{ site.url }}",
+  "description": "{{ description }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://app.gamenightgpt.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "GameNightGPT",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Web",
+  "description": "AI chatbot for board game rules. Ask questions about any board game and get instant, citation-backed answers from official rulebooks.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free tier available"
+  }
+}
+</script>
+{%- endif %}
+
+{# Article Schema - Blog posts #}
+{%- if ogType == "article" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "description": "{{ description }}",
+  "datePublished": "{{ date | dateToRfc3339 }}",
+  "dateModified": "{{ date | dateToRfc3339 }}",
+  "author": {
+    "@type": "Organization",
+    "name": "GameNightGPT",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GameNightGPT",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  },
+  "image": "{{ ogImage or site.url + site.ogImage }}"
+}
+</script>
+{%- endif %}
+
+{# FAQPage Schema - Pages with FAQ content #}
+{%- if faqSchema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for item in faqSchema %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}

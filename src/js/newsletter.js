@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         if (response.ok) {
+          // Track successful signup with Plausible
+          if (typeof plausible !== 'undefined') {
+            plausible('Newsletter Signup');
+          }
           // Show success message
           form.classList.add('hidden');
           successDiv.classList.remove('hidden');

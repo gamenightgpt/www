@@ -38,6 +38,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images/*.svg");
+  eleventyConfig.addPassthroughCopy("src/images/og-default.png");
   eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
   eleventyConfig.addPassthroughCopy({ "src/favicon-16x16.ico": "favicon-16x16.ico" });
   eleventyConfig.addPassthroughCopy({ "src/favicon-48x48.ico": "favicon-48x48.ico" });
@@ -45,6 +46,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/favicon-64x64.png": "favicon-64x64.png" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
   eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
+  eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
 
   // Watch CSS files for changes
   eleventyConfig.addWatchTarget("src/css/");

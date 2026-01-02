@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title or "GameNightGPT - Get Answers Fast — Keep Gaming" }}</title>
+  <title>{{ title or "GameNightGPT - Board Game Rules Assistant" }}</title>
   <meta name="description" content="{{ description or 'Get instant, accurate answers to your rules questions. Your AI-powered board game assistant keeps the fun rolling.' }}">
   
   <!-- Favicon -->
@@ -24,14 +24,35 @@
   <!-- RSS Feed -->
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="/rss.xml">
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="{{ title or 'GameNightGPT - Get Answers Fast — Keep Gaming' }}">
-  <meta property="og:description" content="{{ description or 'Get instant, accurate answers to your rules questions. Your AI-powered board game assistant keeps the fun rolling.' }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://gamenightgpt.com{{ page.url }}">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-  <!-- Plausible analytics -->
-  <script defer data-domain="gamenightgpt.com" src="https://plausible.io/js/script.js"></script>  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ title or 'GameNightGPT - Board Game Rules Assistant' }}">
+  <meta property="og:description" content="{{ description or 'Get instant, accurate answers to your rules questions. Your AI-powered board game assistant keeps the fun rolling.' }}">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ ogImage or site.url + site.ogImage }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="GameNightGPT">
+  <meta property="og:locale" content="en_US">
+  {%- if ogType == 'article' %}
+  <meta property="article:published_time" content="{{ date | dateToRfc3339 }}">
+  <meta property="article:author" content="{{ site.author.name }}">
+  {%- endif %}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or 'GameNightGPT - Board Game Rules Assistant' }}">
+  <meta name="twitter:description" content="{{ description or 'Get instant, accurate answers to your rules questions. Your AI-powered board game assistant keeps the fun rolling.' }}">
+  <meta name="twitter:image" content="{{ ogImage or site.url + site.ogImage }}">
+
+  <!-- Structured Data -->
+  {% include "partials/json-ld.njk" %}
+
+  <!-- Plausible analytics (with tagged-events + outbound-links) -->
+  <script defer data-domain="gamenightgpt.com" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>  
 </head>
 <body>
   <a href="#main" class="skip-to-content">Skip to main content</a>

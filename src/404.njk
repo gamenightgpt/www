@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Page Not Found - GameNightGPT
+description: The page you're looking for doesn't exist. Let's get you back to the game.
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+
+{% include "partials/navbar.njk" %}
+
+<main id="main" class="pt-24 bg-paper min-h-screen flex items-center">
+  <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center py-20">
+    <div class="text-8xl mb-6">🎲</div>
+    <h1 class="text-heading mb-4">Page Not Found</h1>
+    <p class="text-body mb-8">
+      Looks like this page rolled off the table. Let's get you back to the game.
+    </p>
+    <a href="/" class="btn-3d-orange inline-block">
+      Back to Home
+    </a>
+  </div>
+</main>
+
+{% include "partials/footer.njk" %}

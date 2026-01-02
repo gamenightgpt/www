@@ -1,7 +1,8 @@
 {
   "title": "GameNightGPT",
-  "description": "Get Answers Fast — Keep Gaming",
+  "description": "Instant answers to board game rules questions",
   "url": "https://gamenightgpt.com",
+  "ogImage": "/images/og-default.png",
   "author": {
     "name": "GameNightGPT",
     "email": "dallan@gamenightgpt.com"
