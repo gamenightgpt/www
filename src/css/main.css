@@ -1,75 +1,38 @@
 @import "tailwindcss";
 
-/* Prose styles for markdown content */
-.prose ul {
-  list-style-type: disc;
-  padding-left: 1.625em;
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-}
-
-.prose ul>li {
-  padding-left: 0.375em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-.prose ol {
-  list-style-type: decimal;
-  padding-left: 1.625em;
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-}
-
-.prose ol>li {
-  padding-left: 0.375em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-/* Ensure picture elements don't interfere with layout */
-picture {
-  display: contents;
-}
-
+/* =========================================
+   Design System Variables
+   ========================================= */
 :root {
-  /* =========================================
-     Design System Variables
-     ========================================= */
-
   /* --- Colors: Backgrounds --- */
   --bg-dark-coffee: #261C15;
-  /* Main dark background */
   --bg-paper: #E6DFD0;
-  /* Main light section background */
   --bg-card: #F0ECE2;
-  /* Card/Tray background */
   --bg-tray-dark: #C6A487;
-  /* Hero tray background */
+  --bg-question-box: #2D1B15;
 
   /* --- Colors: Text --- */
   --text-heading: #2C241B;
-  /* Dark headings on paper */
   --text-body: #4A3E33;
-  /* Body text on paper */
   --text-on-dark: #F2E8D5;
-  /* Text on dark backgrounds */
   --text-muted: #8D6E63;
+  --text-question-box: #E6D5C3;
 
   /* --- Colors: Accents --- */
   --accent-gold: #EAD4AA;
-  /* Cream/Gold buttons, highlights */
-  --accent-orange: #C25E00;
-  /* Primary action color */
+  --accent-gold-dark: #D4BE96;
   --accent-orange-light: #FF9C45;
-  /* Orange gradient start */
   --accent-orange-dark: #E67320;
-  /* Orange gradient end */
+  --accent-orange-darker: #B85A12;
 
-  /* --- Colors: Borders --- */
+  /* --- Colors: Borders & Shadows --- */
   --border-subtle: #E4DCCB;
   --border-dotted: #B0A695;
   --border-dark: #5D4037;
+  --shadow-tray: #D3C5A8;
+
+  /* --- Colors: Focus States --- */
+  --focus-ring: #1E73E8;
 
   /* --- Typography --- */
   --font-heading: 'Outfit', sans-serif;
@@ -78,73 +41,11 @@ picture {
 
   /* --- Spacing & Radii --- */
   --radius-lg: 12px;
-  --radius-xl: 20px;
 }
 
-/* Global Typography Overrides */
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: var(--font-heading);
-  color: var(--text-heading);
-}
-
-body {
-  font-family: var(--font-body);
-  color: var(--text-body);
-}
-
-/* Utility Classes */
-.font-serif {
-  font-family: var(--font-serif);
-}
-
-.font-heading {
-  font-family: var(--font-heading);
-}
-
-.section-title {
-  font-family: var(--font-heading);
-  font-size: 26px;
-  font-weight: 400;
-  /* Normal */
-  color: var(--text-heading);
-  line-height: 1.25;
-}
-
-.text-on-dark {
-  color: var(--text-on-dark);
-}
-
-.bg-paper {
-  background-color: var(--bg-paper);
-}
-
-.bg-dark-coffee {
-  background-color: var(--bg-dark-coffee);
-}
-
-/* Legacy Variables (Keeping for safety, but mapped where possible) */
-:root {
-  --foreground-rgb: 32, 33, 36;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 250, 250, 252;
-
-  /* Previous Redesign Mappings */
-  --bg-paper-dark: #EBE5D5;
-  --accent-gold-dark: #D4BE96;
-  --accent-700: #D56C15;
-  --accent-800: #B85A12;
-  --primary-500: #1E73E8;
-  /* Keeping for focus states */
-  --neutral-300: #F2F3F5;
-  --neutral-500: #D8DADE;
-  --neutral-700: #5F6368;
-  --neutral-900: #202124;
-}
-
+/* =========================================
+   Base Styles
+   ========================================= */
 html {
   font-size: 100%;
   scroll-behavior: smooth;
@@ -157,39 +58,25 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      rgb(var(--background-start-rgb)),
-      rgb(var(--background-end-rgb)));
-  line-height: 1.4;
-  min-height: 100vh;
-}
-
-/* Typography */
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  color: var(--text-body);
+  line-height: 1.4;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
 
-small {
-  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  line-height: 1.4;
+/* =========================================
+   Typography
+   ========================================= */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.25;
 }
 
-/* Fluid Typography */
 h1 {
   font-size: clamp(2.5rem, 2rem + 3vw, 4rem);
   margin-bottom: 1.5rem;
@@ -216,40 +103,90 @@ h5 {
   margin-bottom: 0.5rem;
 }
 
-/* Texture & Polish Utilities */
-.bg-noise {
-  position: relative;
+p {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.4;
+  max-width: 65ch;
 }
 
-.bg-noise::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
+small {
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  line-height: 1.4;
 }
 
-.bg-wood-pattern {
-  background-color: #3E2D23;
-  /* Subtle wood grain simulation */
-  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.06) 0px, rgba(0, 0, 0, 0.06) 2px, transparent 2px, transparent 8px);
+/* =========================================
+   Design System Utility Classes
+   ========================================= */
+
+/* --- Background Colors --- */
+.bg-dark-coffee { background-color: var(--bg-dark-coffee); }
+.bg-paper { background-color: var(--bg-paper); }
+.bg-card { background-color: var(--bg-card); }
+.bg-tray-dark { background-color: var(--bg-tray-dark); }
+.bg-question-box { background-color: var(--bg-question-box); }
+
+/* --- Text Colors --- */
+.text-heading { color: var(--text-heading); }
+.text-body { color: var(--text-body); }
+.text-on-dark { color: var(--text-on-dark); }
+.text-muted { color: var(--text-muted); }
+.text-accent-gold { color: var(--accent-gold); }
+.text-question-box { color: var(--text-question-box); }
+
+/* --- Font Families --- */
+.font-heading { font-family: var(--font-heading); }
+.font-body { font-family: var(--font-body); }
+.font-serif { font-family: var(--font-serif); }
+
+/* --- Border Colors --- */
+.border-subtle { border-color: var(--border-subtle); }
+.border-dotted-color { border-color: var(--border-dotted); }
+.border-dark { border-color: var(--border-dark); }
+
+/* =========================================
+   Section Title
+   ========================================= */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--text-heading);
+  line-height: 1.25;
 }
 
-.shadow-tray {
-  /* Bevel effect: light top/left, dark bottom/right */
-  box-shadow:
-    inset 2px 2px 3px rgba(255, 255, 255, 0.1),
-    inset -4px -4px 6px rgba(0, 0, 0, 0.4),
-    0 12px 24px rgba(0, 0, 0, 0.5);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+.section-title.text-on-dark {
+  color: var(--text-on-dark);
 }
 
-.shadow-premium-card {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+/* =========================================
+   Container
+   ========================================= */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
+@media (min-width: 640px) {
+  .container {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+/* =========================================
+   Hex Icon (Games Grid)
+   ========================================= */
 .hex-icon-wrapper {
   position: relative;
   width: 100px;
@@ -274,7 +211,6 @@ h5 {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-/* Glossy highlight for Hexagons */
 .hex-content::after {
   content: '';
   position: absolute;
@@ -285,30 +221,38 @@ h5 {
   pointer-events: none;
 }
 
-/* 3D Button Style */
+/* =========================================
+   Buttons
+   ========================================= */
+
+/* 3D Orange Button */
 .btn-3d-orange {
-  background: linear-gradient(to bottom, #FF9C45, #E67320);
+  background: linear-gradient(to bottom, var(--accent-orange-light), var(--accent-orange-dark));
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow:
-    0 4px 0 #B85A12,
+    0 4px 0 var(--accent-orange-darker),
     0 6px 6px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  transition: all 0.1s ease;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn-3d-orange:hover {
+  filter: brightness(1.08);
+  transform: scale(1.02);
 }
 
 .btn-3d-orange:active {
-  transform: translateY(4px);
-  box-shadow:
-    0 0 0 #B85A12,
-    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  filter: brightness(0.95);
+  transform: scale(0.98);
 }
 
+/* 3D Cream Button */
 .btn-3d-cream {
   background-color: var(--accent-gold);
   color: var(--bg-dark-coffee);
   border: 1px solid var(--accent-gold);
   box-shadow:
-    0 4px 0 #D4BE96,
+    0 4px 0 var(--accent-gold-dark),
     0 5px 6px rgba(0, 0, 0, 0.2);
   transition: all 0.15s ease;
 }
@@ -316,17 +260,18 @@ h5 {
 .btn-3d-cream:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 6px 0 #D4BE96,
+    0 6px 0 var(--accent-gold-dark),
     0 7px 10px rgba(0, 0, 0, 0.25);
 }
 
 .btn-3d-cream:active {
   transform: translateY(4px);
   box-shadow:
-    0 0 0 #D4BE96,
+    0 0 0 var(--accent-gold-dark),
     inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Outline Gold Button */
 .btn-outline-gold {
   background-color: transparent;
   color: var(--accent-gold);
@@ -344,80 +289,97 @@ h5 {
   transform: translateY(0);
 }
 
-
-p {
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  line-height: 1.4;
-  max-width: 65ch;
+/* =========================================
+   Texture & Polish Utilities
+   ========================================= */
+.bg-noise {
+  position: relative;
 }
 
-/* Focus states */
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shadow-tray {
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.1),
+    inset -4px -4px 6px rgba(0, 0, 0, 0.4),
+    0 12px 24px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.shadow-premium-card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* =========================================
+   Focus States
+   ========================================= */
 *:focus {
   outline: none;
 }
 
 *:focus-visible {
-  outline: 3px solid var(--primary-500);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
   box-shadow: 0 0 0 6px rgba(30, 115, 232, 0.1);
   border-radius: 4px;
 }
 
-/* Buttons */
-.btn-primary {
-  background-color: var(--primary-500);
-  color: white;
-  padding: 0.75rem 1.5rem;
+/* =========================================
+   Form Elements
+   ========================================= */
+input[type="email"],
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-subtle);
   border-radius: 0.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.2s ease;
-  min-height: 44px;
-  min-width: 44px;
-  border: none;
-  cursor: pointer;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
 }
 
-.btn-primary:hover {
-  background-color: var(--accent-500);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 138, 40, 0.3);
+input[type="email"]:focus,
+input[type="text"]:focus {
+  border-color: var(--focus-ring);
+  outline: none;
 }
 
-.btn-primary:focus-visible {
-  outline: 3px solid var(--primary-900);
-  outline-offset: 2px;
+/* =========================================
+   Prose Styles (Blog Content)
+   ========================================= */
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.625em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
 }
 
-.btn-secondary {
-  background-color: white;
-  color: var(--primary-500);
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.2s ease;
-  min-height: 44px;
-  min-width: 44px;
-  border: 2px solid var(--primary-500);
-  cursor: pointer;
+.prose ul > li {
+  padding-left: 0.375em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-.btn-secondary:hover {
-  background-color: var(--primary-50);
-  color: var(--primary-700);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(30, 115, 232, 0.2);
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.625em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
 }
 
-.btn-secondary:focus-visible {
-  outline: 3px solid var(--primary-500);
-  outline-offset: 2px;
+.prose ol > li {
+  padding-left: 0.375em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-/* Prose styles for blog content */
 .prose h2 {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
@@ -441,7 +403,25 @@ p {
   margin-bottom: 0.5rem;
 }
 
-/* Animation utilities */
+/* =========================================
+   Utilities
+   ========================================= */
+.max-w-readable {
+  max-width: 65ch;
+}
+
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+picture {
+  display: contents;
+}
+
+/* =========================================
+   Animations
+   ========================================= */
 @media (prefers-reduced-motion: no-preference) {
   .animate-fade-in {
     animation: fadeIn 0.5s ease-in;
@@ -453,13 +433,8 @@ p {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
@@ -467,96 +442,21 @@ p {
     transform: translateY(20px);
     opacity: 0;
   }
-
   to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .btn-primary {
-    border: 2px solid white;
-  }
-
-  .btn-secondary {
-    border-width: 3px;
-  }
-}
-
-
-/* Utilities */
-.max-w-readable {
-  max-width: 65ch;
-}
-
-.touch-target {
-  min-height: 44px;
-  min-width: 44px;
-}
-
-/* Container */
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-    padding-right: 2rem;
-    padding-left: 2rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-/* Form elements */
-input[type="email"],
-input[type="text"] {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--border-default);
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  transition: border-color 0.2s ease;
-}
-
-input[type="email"]:focus,
-input[type="text"]:focus {
-  border-color: var(--primary-500);
-  outline: none;
-}
-
-/* Skip to content link */
+/* =========================================
+   Accessibility
+   ========================================= */
 .skip-to-content {
   position: absolute;
   left: -9999px;
   z-index: 999;
   padding: 1rem 1.5rem;
-  background-color: var(--primary-500);
+  background-color: var(--focus-ring);
   color: white;
   text-decoration: none;
   border-radius: 0 0 0.5rem 0.5rem;
@@ -565,4 +465,16 @@ input[type="text"]:focus {
 .skip-to-content:focus {
   left: 0;
   top: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-3d-orange,
+  .btn-3d-cream {
+    border: 2px solid currentColor;
+  }
+
+  .btn-outline-gold {
+    border-width: 3px;
+  }
 }
