@@ -27,28 +27,44 @@
   margin-bottom: 0.5em;
 }
 
+/* Ensure picture elements don't interfere with layout */
+picture {
+  display: contents;
+}
+
 :root {
   /* =========================================
      Design System Variables
      ========================================= */
 
   /* --- Colors: Backgrounds --- */
-  --bg-dark-coffee: #261C15;     /* Main dark background */
-  --bg-paper: #E6DFD0;           /* Main light section background */
-  --bg-card: #F0ECE2;           /* Card/Tray background */
-  --bg-tray-dark: #C6A487;       /* Hero tray background */
-  
+  --bg-dark-coffee: #261C15;
+  /* Main dark background */
+  --bg-paper: #E6DFD0;
+  /* Main light section background */
+  --bg-card: #F0ECE2;
+  /* Card/Tray background */
+  --bg-tray-dark: #C6A487;
+  /* Hero tray background */
+
   /* --- Colors: Text --- */
-  --text-heading: #2C241B;       /* Dark headings on paper */
-  --text-body: #4A3E33;          /* Body text on paper */
-  --text-on-dark: #F2E8D5;       /* Text on dark backgrounds */
+  --text-heading: #2C241B;
+  /* Dark headings on paper */
+  --text-body: #4A3E33;
+  /* Body text on paper */
+  --text-on-dark: #F2E8D5;
+  /* Text on dark backgrounds */
   --text-muted: #8D6E63;
 
   /* --- Colors: Accents --- */
-  --accent-gold: #EAD4AA;        /* Cream/Gold buttons, highlights */
-  --accent-orange: #C25E00;      /* Primary action color */
-  --accent-orange-light: #FF9C45; /* Orange gradient start */
-  --accent-orange-dark: #E67320;  /* Orange gradient end */
+  --accent-gold: #EAD4AA;
+  /* Cream/Gold buttons, highlights */
+  --accent-orange: #C25E00;
+  /* Primary action color */
+  --accent-orange-light: #FF9C45;
+  /* Orange gradient start */
+  --accent-orange-dark: #E67320;
+  /* Orange gradient end */
 
   /* --- Colors: Borders --- */
   --border-subtle: #E4DCCB;
@@ -66,7 +82,11 @@
 }
 
 /* Global Typography Overrides */
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--font-heading);
   color: var(--text-heading);
 }
@@ -81,10 +101,15 @@ body {
   font-family: var(--font-serif);
 }
 
+.font-heading {
+  font-family: var(--font-heading);
+}
+
 .section-title {
   font-family: var(--font-heading);
   font-size: 26px;
-  font-weight: 400; /* Normal */
+  font-weight: 400;
+  /* Normal */
   color: var(--text-heading);
   line-height: 1.25;
 }
@@ -106,13 +131,14 @@ body {
   --foreground-rgb: 32, 33, 36;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 250, 250, 252;
-  
+
   /* Previous Redesign Mappings */
-  --bg-paper-dark: #EBE5D5; 
+  --bg-paper-dark: #EBE5D5;
   --accent-gold-dark: #D4BE96;
   --accent-700: #D56C15;
   --accent-800: #B85A12;
-  --primary-500: #1E73E8; /* Keeping for focus states */
+  --primary-500: #1E73E8;
+  /* Keeping for focus states */
   --neutral-300: #F2F3F5;
   --neutral-500: #D8DADE;
   --neutral-700: #5F6368;
@@ -299,6 +325,23 @@ h5 {
   box-shadow:
     0 0 0 #D4BE96,
     inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  color: var(--accent-gold);
+  border: 2px solid var(--accent-gold);
+  transition: all 0.2s ease;
+}
+
+.btn-outline-gold:hover {
+  background-color: rgba(234, 212, 170, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-gold:active {
+  transform: translateY(0);
 }
 
 

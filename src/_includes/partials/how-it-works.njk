@@ -6,37 +6,43 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-3 mb-8 max-w-5xl mx-auto">
       <!-- Step 1 -->
-      <div class="p-2 rounded-xl border border-white/60 shadow-[0_8px_16px_rgba(0,0,0,0.1)]" style="background-color: var(--bg-card);">
+      <div class="p-4 rounded-xl border border-white/60 shadow-[0_8px_16px_rgba(0,0,0,0.1)]" style="background-color: var(--bg-card);">
         <div class="flex items-center gap-2 mb-0">
           <!-- Icon: Question -->
-          <img src="/images/question.png" alt="Question" class="h-8 w-auto object-contain">
+          <div class="w-12 flex justify-center">
+            {% image "/images/question.png", "Question", [42, 84], "32px", "h-8 w-auto object-contain" %}
+          </div>
           <h3 class="font-bold text-xl text-[#2C241B] leading-tight">Ask a Question</h3>
         </div>
-        <p class="text-[#2C241B] text-sm leading-relaxed px-1">
+        <p class="text-[#2C241B] text-sm leading-relaxed px-1 pl-14">
           Type your question in plain English.
         </p>
       </div>
 
       <!-- Step 2 -->
-      <div class="p-2 rounded-xl border border-white/60 shadow-[0_8px_16px_rgba(0,0,0,0.1)]" style="background-color: var(--bg-card);">
-        <div class="flex items-center gap-1 mb-0">
+      <div class="p-4 rounded-xl border border-white/60 shadow-[0_8px_16px_rgba(0,0,0,0.1)]" style="background-color: var(--bg-card);">
+        <div class="flex items-center gap-2 mb-0">
            <!-- Icon: Answer -->
-          <img src="/images/answer.png" alt="Answer" class="h-[42px] w-auto object-contain">
+          <div class="w-12 flex justify-center">
+            {% image "/images/answer.png", "Answer", [42, 84], "32px", "h-8 w-auto object-contain" %}
+          </div>
           <h3 class="font-bold text-xl text-[#2C241B] leading-tight">Get an Answer</h3>
         </div>
-        <p class="text-[#2C241B] text-sm leading-relaxed px-1">
+        <p class="text-[#2C241B] text-sm leading-relaxed px-1 pl-14">
           Get fast, accurate answers based on official rules.
         </p>
       </div>
 
       <!-- Step 3 -->
-      <div class="p-2 rounded-xl border border-white/60 shadow-[0_8px_16px_rgba(0,0,0,0.1)]" style="background-color: var(--bg-card);">
+      <div class="p-4 rounded-xl border border-white/60 shadow-[0_8px_16px_rgba(0,0,0,0.1)]" style="background-color: var(--bg-card);">
         <div class="flex items-center gap-2 mb-0">
            <!-- Icon: Source -->
-          <img src="/images/source.png" alt="Source" class="h-8 w-auto object-contain">
+          <div class="w-12 flex justify-center">
+            {% image "/images/source.png", "Source", [42, 84], "32px", "h-8 w-auto object-contain" %}
+          </div>
           <h3 class="font-bold text-xl text-[#2C241B] leading-tight">See the Source</h3>
         </div>
-        <p class="text-[#2C241B] text-sm leading-relaxed px-1">
+        <p class="text-[#2C241B] text-sm leading-relaxed px-1 pl-14">
           Every answer includes citations from the rulebook or FAQ.
         </p>
       </div>
@@ -50,5 +56,5 @@
   </div>
 
   <!-- Die Decoration -->
-  <img src="/images/die.png" class="hidden lg:block absolute bottom-[-10px] right-[-10px] w-24 h-24 lg:w-32 lg:h-32 object-contain drop-shadow-xl transform -rotate-12 pointer-events-none" alt="">
+  {% image "/images/die.png", "", [128, 256], "128px", "hidden lg:block absolute bottom-[-10px] right-[-10px] w-24 h-24 lg:w-32 lg:h-32 object-contain drop-shadow-xl transform -rotate-12 pointer-events-none" %}
 </section>

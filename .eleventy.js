@@ -1,8 +1,32 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const Image = require("@11ty/eleventy-img");
+const path = require("path");
+
+async function imageShortcode(src, alt, widths, sizes, classes = "", loading = "lazy") {
+  let inputPath = src.startsWith("/") ? path.join("src", src) : src;
+
+  let metadata = await Image(inputPath, {
+    widths: widths,
+    formats: ["webp", "png"],
+    outputDir: "./_site/img/",
+    urlPath: "/img/",
+    filenameFormat: (id, src, width, format) => {
+      const name = path.basename(src, path.extname(src));
+      return `${name}-${width}w.${format}`;
+    }
+  });
+
+  return Image.generateHTML(metadata, {
+    alt, sizes, loading, decoding: "async", class: classes
+  });
+}
 
 module.exports = function(eleventyConfig) {
   // Add RSS plugin for filters only
   eleventyConfig.addPlugin(pluginRss);
+
+  // Add image shortcode
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
   // Blog post collection
   eleventyConfig.addCollection("posts", function(collectionApi) {
@@ -13,7 +37,7 @@ module.exports = function(eleventyConfig) {
   // Pass through copy for static assets
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
-  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/images/*.svg");
   eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
   eleventyConfig.addPassthroughCopy({ "src/favicon-16x16.ico": "favicon-16x16.ico" });
   eleventyConfig.addPassthroughCopy({ "src/favicon-48x48.ico": "favicon-48x48.ico" });

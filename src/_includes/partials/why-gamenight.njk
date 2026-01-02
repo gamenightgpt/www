@@ -18,8 +18,8 @@
       <div class="flex flex-col items-center">
         <!-- Changed h-52 items-end to h-56 items-center. mb-2 to mb-0. -->
         <!-- Center alignment lowers the tall icon relative to the top (padding introduced). -->
-        <div class="w-full h-56 flex items-center justify-center mb-0">
-          <img src="/images/hourglass.png" alt="Hourglass" class="w-auto h-52 object-contain drop-shadow-md">
+        <div class="w-full h-28 md:h-56 flex items-center justify-center mb-0">
+          {% image "/images/hourglass.png", "Hourglass", [104, 208, 416], "(min-width: 768px) 208px, 96px", "w-auto h-24 md:h-52 object-contain drop-shadow-md" %}
         </div>
         <h3 class="text-xl font-bold mb-2 text-[#2C241B] leading-tight">Fast</h3>
         <p class="text-lg leading-snug text-[#4A3E33] font-['DM_Sans']">
@@ -29,8 +29,8 @@
 
       <!-- Feature 2: Neutral -->
       <div class="flex flex-col items-center md:border-l md:border-r md:px-4" style="border-color: rgba(211, 197, 168, 0.5);">
-        <div class="w-full h-56 flex items-center justify-center mb-0">
-          <img src="/images/scale.png" alt="Scale" class="w-auto h-52 object-contain drop-shadow-md">
+        <div class="w-full h-28 md:h-56 flex items-center justify-center mb-0">
+          {% image "/images/scale.png", "Scale", [104, 208, 416], "(min-width: 768px) 208px, 96px", "w-auto h-24 md:h-52 object-contain drop-shadow-md" %}
         </div>
         <h3 class="text-xl font-bold mb-2 text-[#2C241B] leading-tight">Neutral</h3>
         <p class="text-lg leading-snug text-[#4A3E33] font-['DM_Sans']">
@@ -41,8 +41,8 @@
       <!-- Feature 3: Transparent -->
       <div class="flex flex-col items-center">
         <!-- h-56 items-center. Book (h-44) will float in center. -->
-        <div class="w-full h-56 flex items-center justify-center mb-0">
-          <img src="/images/book.png" alt="Open Book" class="w-auto h-44 object-contain drop-shadow-md">
+        <div class="w-full h-28 md:h-56 flex items-center justify-center mb-0">
+          {% image "/images/book.png", "Open Book", [88, 176, 352], "(min-width: 768px) 176px, 80px", "w-auto h-20 md:h-44 object-contain drop-shadow-md" %}
         </div>
         <h3 class="text-xl font-bold mb-2 text-[#2C241B] leading-tight">Transparent</h3>
         <p class="text-lg leading-snug text-[#4A3E33] font-['DM_Sans']">
