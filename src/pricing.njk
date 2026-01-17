@@ -1,0 +1,93 @@
+---
+layout: layouts/base.njk
+title: Pricing - GameNightGPT
+description: Planned pricing for GameNightGPT after beta. Free tier for up to 3 games, affordable annual plan for larger collections.
+permalink: /pricing/
+---
+
+{% include "partials/navbar.njk" %}
+
+<main id="main" class="pt-16">
+  <!-- Hero Section -->
+  <section class="bg-dark-coffee py-12 lg:py-16">
+    <div class="container mx-auto">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold font-heading text-accent-gold mb-4">
+          Planned Pricing
+        </h1>
+        <p class="text-xl text-on-dark opacity-90">
+          Subject to change based on beta feedback
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="bg-paper py-12 lg:py-16">
+    <div class="container mx-auto">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Pricing Tiers -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <!-- Free Tier -->
+          <div class="bg-white rounded-xl p-8 shadow-sm border border-[var(--border-subtle)] text-center">
+            <h2 class="text-lg font-bold text-muted uppercase tracking-wide mb-4">Free</h2>
+            <div class="mb-6">
+              <span class="text-5xl font-bold text-heading">$0</span>
+            </div>
+            <p class="text-body leading-relaxed mb-4">
+              Up to 3 games in your collection
+            </p>
+            <p class="text-body italic text-sm">
+              All games free during beta
+            </p>
+          </div>
+          <!-- All Games Tier -->
+          <div class="bg-white rounded-xl p-8 shadow-sm border-2 border-[var(--accent-gold)] text-center">
+            <h2 class="text-lg font-bold text-muted uppercase tracking-wide mb-4">All Games</h2>
+            <div class="mb-2">
+              <span class="text-5xl font-bold text-heading">~$29</span>
+              <span class="text-lg text-body">/year</span>
+            </div>
+            <p class="text-muted italic text-sm mb-6">(final price TBD)</p>
+            <p class="text-body leading-relaxed">
+              Unlimited access to our full library of indexed games
+            </p>
+          </div>
+        </div>
+
+        <!-- Why We're Sharing This Now -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-[var(--border-subtle)] mb-8">
+          <h2 class="text-2xl font-bold text-heading mb-4">Why We're Sharing This Now</h2>
+          <p class="text-body leading-relaxed mb-4">
+            We're sharing this early so there are no surprises. Beta feedback may influence final pricing.
+          </p>
+          <p class="text-body leading-relaxed">
+            Our goal is to keep GameNightGPT affordable for hobbyists while sustainable enough to keep expanding our game library.
+          </p>
+        </div>
+
+        <!-- Beta Thank-You -->
+        <div class="bg-dark-coffee rounded-xl p-8 text-center">
+          <h2 class="text-2xl font-bold text-accent-gold mb-4">Free Year for Beta Feedback</h2>
+          <p class="text-on-dark leading-relaxed mb-4">
+            GameNightGPT is completely free during beta.
+          </p>
+          <p class="text-on-dark leading-relaxed mb-6">
+            Anyone who provides meaningful feedback during beta will receive <strong class="text-accent-gold">one free year</strong> of GameNightGPT after beta ends.
+          </p>
+          <p class="text-on-dark leading-relaxed mb-8">
+            That's our way of saying thanks to the people who help shape what GameNightGPT becomes.
+          </p>
+          <a href="https://app.gamenightgpt.com" class="btn-3d-orange inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-bold text-lg text-white plausible-event-name=CTA+Pricing">
+            Try the Beta
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include "partials/footer.njk" %}
