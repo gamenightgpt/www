@@ -60,6 +60,12 @@ Use design system variables instead of hardcoding colors.
 
 GitHub Actions deploys to GitHub Pages on push to `main` branch. The workflow runs `npm ci`, builds, and deploys `_site/`.
 
+## Blog Posts
+
+When creating blog posts, set the date to 11:59:00 PM UTC on the publish date. Buttondown (our newsletter service) skips posts older than 24 hours, and using midnight UTC can cause issues depending on when the post is deployed.
+
+Example: `date: 2026-01-22T23:59:00Z`
+
 ## External Integrations
 
 - **Newsletter**: Buttondown API (handled in `src/js/newsletter.js`)
