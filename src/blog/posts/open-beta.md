@@ -1,5 +1,5 @@
 ---
-title: GameNightGPT Is in Open Beta (nearly 250 Games Loaded)
+title: GameNightGPT Is in Open Beta (250 Games Loaded)
 date: 2026-01-22T00:00:00Z
 description: GameNightGPT is now in open beta with 250 games loaded. Free to use during beta, with a free one-year subscription for anyone who provides feedback.
 layout: layouts/post.njk
