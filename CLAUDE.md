@@ -69,4 +69,4 @@ Example: `date: 2026-01-22T23:59:00Z`
 ## External Integrations
 
 - **Newsletter**: Buttondown API (handled in `src/js/newsletter.js`)
-- **Analytics**: Plausible (configured in base layout)
+- **Analytics**: Google Tag Manager (configured in base layout)
