@@ -69,4 +69,4 @@ Example: `date: 2026-01-22T23:59:00Z`
 ## External Integrations
 
 - **Newsletter**: Buttondown API (handled in `src/js/newsletter.js`)
-- **Analytics**: Google Tag Manager (configured in base layout)
+- **Analytics**: None. Plausible and Google Tag Manager were both removed; there is no analytics or tag script in the base layout.
